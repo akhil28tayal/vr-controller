@@ -3,12 +3,14 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
+var port = Number(process.env.PORT || 3000);
+
 app.get('/', function(req,res){
   res.send("Hello World !");
 })
 
-server.listen(3000, ()=>{
-    console.log("Server running at port 3000");
+server.listen(port, ()=>{
+    console.log("Server running at port "+ port);
 });
 
 var nicknames = {} ;
