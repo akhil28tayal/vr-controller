@@ -3,6 +3,10 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
+app.get('/', function(req,res){
+  res.send("Hello World !");
+})
+
 server.listen(3000, ()=>{
     console.log("Server running at port 3000");
 });
